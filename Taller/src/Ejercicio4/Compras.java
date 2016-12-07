@@ -46,15 +46,19 @@ public class Compras {
 
         try // envía valores al archivo
         {
-            double precio = 0, subtotal = 0, iva = 0, total=0;
-            String cadena ="";
-            int cant = 0;
+            double precio = 0, subtotal = 0, iva = 0, total = 0;
+            String cadena = "";
+            int cant = 0, i = 0;
 
             System.out.println("COMERCIAL VENTAS Y REVENTAS");
             System.out.print("Ingrese su nombre: ");
             String nombre = teclado.nextLine();
             System.out.print("Ingrese Ciudad: ");
             String ciudad = teclado.nextLine();
+            salida.format("**********Comercial Ventas y Reventas**********"
+                    + "\nNombre: %s\nCiudad: %s\n"
+                    + "----------------------------------------\n"
+                    + "Producto       Cant       Precio\n", nombre, ciudad);
             while (bandera) // itera hasta que bandera sea false
             {
                 System.out.println("*****PRODUCTOS****");
@@ -89,6 +93,9 @@ public class Compras {
                         cadena = "SAL";
                         break;
                 }
+                salida.format("%s          %d         %.2f\n"
+                        , cadena, cant, precio);
+
                 subtotal += precio;
                 iva = subtotal * 0.14;
                 total = subtotal + iva;
@@ -99,16 +106,10 @@ public class Compras {
                     bandera = false;
                 }
             }
-            salida.format("**********Comercial Ventas y Reventas**********"
-                    + "\nNombre: %s\nCiudad: %s\n"
-                    + "----------------------------------------\n"
-                    + "Producto       Cant       Precio\n"
-                    + "%s              %d         %.2f\n"
-                    + "----------------------------------------\n"
+            salida.format("----------------------------------------\n"
                     + "Subtotal: %.2f\n"
                     + "IVA: %.2f\n"
-                    + "TOTAL: %.2f\n", nombre, ciudad,cadena,cant,
-                    precio,subtotal, iva, total);
+                    + "TOTAL: %.2f\n", subtotal, iva, total);
 
         } // fin de try
         catch (FormatterClosedException formatterClosedException) {

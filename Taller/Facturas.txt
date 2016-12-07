@@ -1,10 +1,14 @@
 **********Comercial Ventas y Reventas**********
-Nombre: Marco
-Ciudad: Loja
------------------------------------
-Producto       Cant       Precio
-ARROZ       3       7,50
+Nombre: Augusto
+Ciudad: Guayaquil
 ----------------------------------------
-Subtotal: 7,50
-IVA: 1,05
-TOTAL: 8,55
+Producto       Cant       Precio
+ARROZ          12         30.00
+AZUCAR          13         19.50
+ACEITE          14         18.20
+TALLARINES          15         22.50
+SAL          10         10.00
+----------------------------------------
+Subtotal: 100.20
+IVA: 14.03
+TOTAL: 114.23
